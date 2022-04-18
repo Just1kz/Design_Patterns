@@ -1,42 +1,43 @@
-package design.patterns.A_Creational.builder.example_one;
+package design.patterns.A_Creational.builder.example_two;
 
 import design.patterns.A_Creational.builder.Car;
 
-public class CarBuilder {
+public class CarBuilderTwo implements Builder {
     private String mark;
     private Car.Transmission transmission;
     private Integer speed;
 
-    public CarBuilder withMark(String mark) {
-        this.mark = mark;
-        return this;
-    }
-
-    public CarBuilder withTransmission(Car.Transmission transmission) {
+    @Override
+    public void withTransmission(Car.Transmission transmission) {
         this.transmission = transmission;
-        return this;
     }
 
-    public CarBuilder withSpeed(int speed) {
+    @Override
+    public void withSpeed(int speed) {
         this.speed = speed;
-        return this;
     }
 
-    private void reset() {
+    @Override
+    public void withMark(String mark) {
+        this.mark = mark;
+    }
+
+    @Override
+    public void reset() {
         this.mark = null;
         this.transmission = null;
         this.speed = null;
     }
 
-    public Car build() {
-        Car car = new Car(this.mark, this.transmission, this.speed);
+    public Car getResult() {
+        Car car = new Car(mark, transmission, speed);
         reset();
         return car;
     }
 
     @Override
     public String toString() {
-        return "CarBuilder{" +
+        return "CarBuilderTwo{" +
                 "mark='" + mark + '\'' +
                 ", transmission=" + transmission +
                 ", speed=" + speed +
