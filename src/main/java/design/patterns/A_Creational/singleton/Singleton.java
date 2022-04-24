@@ -12,6 +12,7 @@ public final class Singleton {
         if (singleton == null) {
             singleton = new Singleton(id);
         } else {
+            //меняем состояние существующего объекта
             singleton.id = id;
         }
         return singleton;
