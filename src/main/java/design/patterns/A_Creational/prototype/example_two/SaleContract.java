@@ -6,7 +6,7 @@ import java.util.Date;
  * Клонирование объекта с помощью интерфейса Cloneable
  */
 public class SaleContract implements Cloneable {
-    private final String id;
+    private String id;
     private final int cost;
     private final Date date;
 
@@ -35,15 +35,7 @@ public class SaleContract implements Cloneable {
                 '}';
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public Date getDate() {
-        return date;
+    public void setId(String id) {
+        this.id = id;
     }
 }

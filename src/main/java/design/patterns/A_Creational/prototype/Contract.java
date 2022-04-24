@@ -34,24 +34,12 @@ public abstract class Contract {
         return Objects.hash(id, cost, date);
     }
 
-    public String getId() {
-        return id;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
 
-    public int getCost() {
-        return cost;
-    }
-
     public void setCost(int cost) {
         this.cost = cost;
-    }
-
-    public Date getDate() {
-        return date;
     }
 
     public void setDate(Date date) {
